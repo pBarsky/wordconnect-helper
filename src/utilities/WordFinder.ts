@@ -1,4 +1,3 @@
-import polishWords from '../dictionaries/polish_words'
 import { QueryFormValues } from '../model/QueryForm'
 
 interface Props {
@@ -22,7 +21,8 @@ class WordFinder {
 
   public Search (): void {
     const query = new RegExp(`^${this.PrepareRegex()}$`, 'i')
-    polishWords.forEach(word => {
+    // @ts-ignore
+    window.POLISH_WORDS.forEach(word => {
       if (word.match(query)) {
         this._addResult(word)
       }
