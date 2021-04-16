@@ -1,36 +1,36 @@
-import { polishWords } from '../dictionaries/polish_words'
+import polishWords from '../dictionaries/polish_words'
 import { QueryFormValues } from '../model/QueryForm'
 
 interface Props {
-  addResult: (result: string) => void
+  addResult(res: string): void
 }
 
 class WordFinder {
   private readonly _letters: string[];
-  private readonly _addResult: (result: string) => void;
   private readonly _maxCount: number;
   private readonly _minCount: number;
+  private readonly _unique: boolean;
+  private _addResult: (res: string) => void;
 
-  constructor ({ maxCount, minCount, query }: QueryFormValues, { addResult }: Props) {
+  constructor ({ maxCount, minCount, query, unique }: QueryFormValues, { addResult }: Props) {
+    this._unique = unique
+    this._addResult = addResult
     this._letters = query.split(' ')
     this._maxCount = maxCount
     this._minCount = minCount
-    this._addResult = addResult
   }
 
   public Search (): void {
     const query = new RegExp(`^${this.PrepareRegex()}$`, 'i')
-    let word = ''
-    for (let i = 0; i < polishWords.length; i++) {
-      word = polishWords[i]
+    polishWords.forEach(word => {
       if (word.match(query)) {
         this._addResult(word)
       }
-    }
+    })
   }
 
   private PrepareRegex (): string {
-    let res = '(?!.*(.).*\\1)['
+    let res = `${this._unique ? '(?!.*(.).*\\1)' : ''}[`
     this._letters.forEach(letter => {
       res += `${letter}`
     })

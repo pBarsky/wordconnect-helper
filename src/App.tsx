@@ -22,16 +22,18 @@ function App () {
   }
 
   return (
-    <div>
-      <Container style={{ marginTop: '5vh', display: 'flex', justifyContent: 'center' }}>
-        <QueryForm handleQuerySearch={handleQuerySearch} initialMinCount={1} initialMaxCount={5}
-                   clearResults={handleResultsClear}/>
-        <Results results={results}/>
-      </Container>
-    </div>
+    <Container style={{
+      marginTop: '5vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <QueryForm handleQuerySearch={handleQuerySearch} initialMinCount={3} initialMaxCount={7}
+                 clearResults={handleResultsClear}/>
+      <Results results={results}/>
+    </Container>
   )
 }
 
 export default App
-
-// TODO: Think about swapping SemanticUI for Bootstrap

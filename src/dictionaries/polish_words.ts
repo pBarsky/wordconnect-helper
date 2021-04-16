@@ -1,4 +1,4 @@
-export const polishWords = ['3D',
+export default ['3D',
   '500 plus',
   'a',
   'a.',
