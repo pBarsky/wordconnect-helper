@@ -5,3 +5,5 @@ Site made to help to search for words with given letters and size.
 ## Run locally
 
 Run `npm start` in project root directory.
+
+## [Live](https://pBarsky.github.io/wordconnect-helper/)
