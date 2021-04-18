@@ -6,9 +6,6 @@ import ErrorBox from './ErrorBox'
 import { FormGroup } from 'semantic-ui-react'
 import ErrorMessages from '../utilities/ErrorMessages'
 
-// TODO: Add validation for numbers
-// TODO: Change the way errors are presented
-
 const InnerForm = (props: FormikProps<QueryFormValues>) => {
   const { touched, errors, isSubmitting, values: { minCount, maxCount } } = props
   return (
@@ -80,10 +77,12 @@ const QueryForm = withFormik<QueryFormProps, QueryFormValues>({
     }
   },
   validate: validate,
-  handleSubmit: (values, { props: { handleQuerySearch, clearResults }, setSubmitting }) => {
+  handleSubmit: (values, {
+    props: { handleQuerySearch, clearResults, setSubmitting: flagOutsideSubmitting }, setSubmitting
+  }) => {
     clearResults()
-    handleQuerySearch(values)
-    setSubmitting(false)
+    flagOutsideSubmitting(true)
+    handleQuerySearch(values, () => setSubmitting(false))
   }
 })(InnerForm)
 

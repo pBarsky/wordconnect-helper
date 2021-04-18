@@ -2,11 +2,22 @@ import React from 'react'
 import { List, Message, TransitionGroup } from 'semantic-ui-react'
 
 interface Props {
-  results: string[]
+  results: string[],
+  isSubmitting: boolean,
+  isSearched: boolean
 }
 
-const Results = ({ results }: Props) => {
+const Results = ({ results, isSubmitting, isSearched }: Props) => {
   const containerStyle = { width: '80vw', maxWidth: '500px' }
+
+  const messageHeader = isSubmitting ? 'Szukam...' : 'Nie znaleziono wyrazów spełniających podane parametry.'
+  const messageContent = isSubmitting ? '' : 'Spróbuj poszukać czegoś innego.'
+
+  if (!isSearched) {
+    return <Message>
+      Wpisz litery w formularzu powyżej, aby wyszukać wyrazy.
+    </Message>
+  }
 
   return (
     results.length > 0
@@ -18,8 +29,8 @@ const Results = ({ results }: Props) => {
         ))}
       </TransitionGroup>
       : <Message style={containerStyle}>
-        <Message.Header>No results to show.</Message.Header>
-        <Message.Content>Please search for something else.</Message.Content>
+        <Message.Header>{messageHeader}</Message.Header>
+        <Message.Content>{messageContent}</Message.Content>
       </Message>
   )
 }

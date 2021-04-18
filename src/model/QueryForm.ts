@@ -4,7 +4,8 @@ export interface QueryFormProps {
   initialMaxCount?: number;
   initialUnique?: boolean;
   clearResults: () => void;
-  handleQuerySearch: (values: QueryFormValues) => void;
+  handleQuerySearch: (values: QueryFormValues, markCompletion: () => void) => void;
+  setSubmitting: (b: boolean) => void
 }
 
 export interface QueryFormValues {

@@ -1,4 +1,4 @@
-window.POLISH_WORDS = ['3D',
+export default ['3D',
   '500 plus',
   'a',
   'a.',

@@ -7,17 +7,23 @@ import { QueryFormValues } from './model/QueryForm'
 
 function App () {
   const [results, setResults] = useState<string[]>([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSearched, setIsSearched] = useState(false)
 
   const handleResultsAdd = (result: string) => {
     setResults(oldState => [...oldState, result])
   }
 
-  const handleQuerySearch = (values: QueryFormValues) => {
-    const wf = new WordFinder(values, { addResult: handleResultsAdd })
-    wf.Search()
+  const handleQuerySearch = (values: QueryFormValues, markCompletion: () => void) => {
+    const wf = new WordFinder(values)
+    wf.Search().then(words => {
+      words?.forEach(handleResultsAdd)
+      markCompletion()
+    })
   }
 
   const handleResultsClear = () => {
+    setIsSearched(true)
     setResults([])
   }
 
@@ -30,8 +36,8 @@ function App () {
       alignItems: 'center'
     }}>
       <QueryForm handleQuerySearch={handleQuerySearch} initialMinCount={3} initialMaxCount={7}
-                 clearResults={handleResultsClear}/>
-      <Results results={results}/>
+                 clearResults={handleResultsClear} setSubmitting={setIsSubmitting}/>
+      <Results results={results} isSubmitting={isSubmitting} isSearched={isSearched}/>
     </Container>
   )
 }
