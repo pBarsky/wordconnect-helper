@@ -19,6 +19,7 @@ function App () {
     wf.Search().then(words => {
       words?.forEach(handleResultsAdd)
       markCompletion()
+      setIsSubmitting(false)
     })
   }
 
