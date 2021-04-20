@@ -24,5 +24,9 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'warn',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off'
+  },
+  globals: {
+    React: true,
+    JSX: true
   }
 }

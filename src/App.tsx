@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Container } from 'semantic-ui-react'
-import QueryForm from './forms/QueryForm'
-import Results from './components/Results'
+import QueryForm from './forms/queryForm/QueryForm'
+import Results from './components/Results/Results'
 import WordFinder from './utilities/WordFinder'
 import { QueryFormValues } from './model/QueryForm'
 

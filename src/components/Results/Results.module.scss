@@ -1,0 +1,25 @@
+$light-shadow-color: hsl(0, 0%, 95%);
+
+.results {
+  box-shadow: 0 10px 40px 10px $light-shadow-color !important;
+  padding: 30px !important;
+  border-radius: 15px !important;
+}
+
+.container{
+  width: clamp(200px, 80vw, 500px);
+}
+
+.message{
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.noBorder{
+  border: none !important;
+}
+
+.noShadow{
+  box-shadow: none !important;
+}
