@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/wordconnect-helper/static/css/main.9b54b3ca.chunk.css",
-    "main.js": "/wordconnect-helper/static/js/main.4e49f7a7.chunk.js",
-    "main.js.map": "/wordconnect-helper/static/js/main.4e49f7a7.chunk.js.map",
-    "runtime-main.js": "/wordconnect-helper/static/js/runtime-main.2f5cf081.js",
-    "runtime-main.js.map": "/wordconnect-helper/static/js/runtime-main.2f5cf081.js.map",
+    "main.css": "/wordconnect-helper/static/css/main.b6651727.chunk.css",
+    "main.js": "/wordconnect-helper/static/js/main.aa2a9d41.chunk.js",
+    "main.js.map": "/wordconnect-helper/static/js/main.aa2a9d41.chunk.js.map",
+    "runtime-main.js": "/wordconnect-helper/static/js/runtime-main.ad8acdaa.js",
+    "runtime-main.js.map": "/wordconnect-helper/static/js/runtime-main.ad8acdaa.js.map",
     "static/css/2.b2d8736d.chunk.css": "/wordconnect-helper/static/css/2.b2d8736d.chunk.css",
-    "static/js/2.45d1ae59.chunk.js": "/wordconnect-helper/static/js/2.45d1ae59.chunk.js",
-    "static/js/2.45d1ae59.chunk.js.map": "/wordconnect-helper/static/js/2.45d1ae59.chunk.js.map",
-    "static/js/3.fe0533cc.chunk.js": "/wordconnect-helper/static/js/3.fe0533cc.chunk.js",
-    "static/js/3.fe0533cc.chunk.js.map": "/wordconnect-helper/static/js/3.fe0533cc.chunk.js.map",
+    "static/js/2.b697530c.chunk.js": "/wordconnect-helper/static/js/2.b697530c.chunk.js",
+    "static/js/2.b697530c.chunk.js.map": "/wordconnect-helper/static/js/2.b697530c.chunk.js.map",
+    "static/js/3.317b68e7.chunk.js": "/wordconnect-helper/static/js/3.317b68e7.chunk.js",
+    "static/js/3.317b68e7.chunk.js.map": "/wordconnect-helper/static/js/3.317b68e7.chunk.js.map",
     "eac6f6e9fd1cd6bdd736.worker.js": "/wordconnect-helper/eac6f6e9fd1cd6bdd736.worker.js",
     "eac6f6e9fd1cd6bdd736.worker.js.map": "/wordconnect-helper/eac6f6e9fd1cd6bdd736.worker.js.map",
     "index.html": "/wordconnect-helper/index.html",
     "static/css/2.b2d8736d.chunk.css.map": "/wordconnect-helper/static/css/2.b2d8736d.chunk.css.map",
-    "static/css/main.9b54b3ca.chunk.css.map": "/wordconnect-helper/static/css/main.9b54b3ca.chunk.css.map",
-    "static/js/2.45d1ae59.chunk.js.LICENSE.txt": "/wordconnect-helper/static/js/2.45d1ae59.chunk.js.LICENSE.txt",
+    "static/css/main.b6651727.chunk.css.map": "/wordconnect-helper/static/css/main.b6651727.chunk.css.map",
+    "static/js/2.b697530c.chunk.js.LICENSE.txt": "/wordconnect-helper/static/js/2.b697530c.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/wordconnect-helper/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f5cf081.js",
+    "static/js/runtime-main.ad8acdaa.js",
     "static/css/2.b2d8736d.chunk.css",
-    "static/js/2.45d1ae59.chunk.js",
-    "static/css/main.9b54b3ca.chunk.css",
-    "static/js/main.4e49f7a7.chunk.js"
+    "static/js/2.b697530c.chunk.js",
+    "static/css/main.b6651727.chunk.css",
+    "static/js/main.aa2a9d41.chunk.js"
   ]
 }
