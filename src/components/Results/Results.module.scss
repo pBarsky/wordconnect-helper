@@ -4,10 +4,8 @@ $light-shadow-color: hsl(0, 0%, 95%);
   box-shadow: 0 10px 40px 10px $light-shadow-color !important;
   padding: 30px !important;
   border-radius: 15px !important;
-}
-
-.container{
-  width: clamp(200px, 80vw, 500px);
+  width: clamp(200px, 80vw, 400px) !important;
+  overflow: auto;
 }
 
 .message{

@@ -17,7 +17,7 @@ const Results = ({ results, isSubmitting, isSearched }: Props) => {
   }
 
   if (isSubmitting) {
-    return <Message padded className={cssClasses.segment}>
+    return <Message className={cssClasses.segment}>
       <Dimmer active inverted>
         <Loader>Szukam...</Loader>
       </Dimmer>
@@ -25,8 +25,9 @@ const Results = ({ results, isSubmitting, isSearched }: Props) => {
   }
 
   return (
-    <div className={[cssClasses.results, cssClasses.container].join(' ')}>
-      {results.length > 0 ? <ResultList results={results}/> : <NoResultsFound/>}
+    <div className={cssClasses.results}>
+      <ResultList results={results}/>
+      {results.length <= 0 && <NoResultsFound/>}
     </div>
   )
 }

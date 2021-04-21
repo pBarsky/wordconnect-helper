@@ -16,10 +16,15 @@ class WordFinder {
     this._minCount = minCount
   }
 
-  public async Search (): Promise<string[] | undefined> {
+  public async * SearchGenerator (): AsyncGenerator<string | undefined> {
     const query = new RegExp(`^${this.PrepareRegex()}$`, 'i')
     const instance = worker()
-    return await instance.searchWords(query)
+    let word = ''
+    let lastIndex: number = 0
+    while (lastIndex !== -1) {
+      [word, lastIndex] = await instance.searchWords(query, lastIndex)
+      yield word
+    }
   }
 
   private PrepareRegex (): string {
