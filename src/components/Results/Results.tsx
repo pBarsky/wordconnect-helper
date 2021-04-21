@@ -1,7 +1,8 @@
 import cssClasses from './Results.module.scss'
-import { Dimmer, Loader, Message, Segment } from 'semantic-ui-react'
+import { Dimmer, Header, Loader, Message, Segment } from 'semantic-ui-react'
 import ResultList from './ResultList'
 import NoResultsFound from './NoResultsFound'
+import { getWordSuffix } from '../../utilities/pluralWordHelper'
 
 interface Props {
   results: string[],
@@ -26,6 +27,7 @@ const Results = ({ results, isSubmitting, isSearched }: Props) => {
 
   return (
     <div className={cssClasses.results}>
+      <Header size="medium">Znalazłem {results.length} wyraz{getWordSuffix(results.length)}.</Header>
       <ResultList results={results}/>
       {results.length <= 0 && <NoResultsFound/>}
     </div>
