@@ -1,7 +1,8 @@
 import { withFormik } from 'formik'
 import { QueryFormProps, QueryFormValues } from '../../model/QueryForm'
 import { validateQueryForm } from '../../utilities/Validators'
-import { InnerForm } from './InnerForm'
+import InnerForm from './InnerForm'
+import { memo } from 'react'
 
 const QueryForm = withFormik<QueryFormProps, QueryFormValues>({
   mapPropsToValues: props => {
@@ -22,4 +23,4 @@ const QueryForm = withFormik<QueryFormProps, QueryFormValues>({
   }
 })(InnerForm)
 
-export default QueryForm
+export default memo(QueryForm)

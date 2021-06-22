@@ -1,8 +1,9 @@
+import { memo } from 'react'
 import { Message, Transition } from 'semantic-ui-react'
 
 interface Props {
-  message: string,
-  visible: boolean
+  message: string;
+  visible: boolean;
 }
 
 const ErrorBox = ({ message, visible }: Props) => {
@@ -13,4 +14,4 @@ const ErrorBox = ({ message, visible }: Props) => {
   )
 }
 
-export default ErrorBox
+export default memo(ErrorBox)

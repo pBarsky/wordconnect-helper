@@ -1,14 +1,8 @@
-$light-shadow-color: hsl(0, 0%, 95%);
-
 .QueryForm {
-  box-shadow: 0 10px 40px 10px $light-shadow-color;
+  box-shadow: var(--default-drop-shadow);
+  border: var(--default-border) !important;
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 30px;
   width: clamp(200px, 80vw, 400px) !important;
-
-  input:focus {
-    box-shadow: 0 5px 30px px $light-shadow-color !important;
-  }
 }
-

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Container } from 'semantic-ui-react'
-import QueryForm from '../forms/queryForm/QueryForm'
+import { Container, Header } from 'semantic-ui-react'
 import Results from '../components/Results/Results'
-import WordFinder from '../utilities/WordFinder'
+import QueryForm from '../forms/queryForm/QueryForm'
 import { QueryFormValues } from '../model/QueryForm'
+import WordFinder from '../utilities/WordFinder'
 import style from './App.module.scss'
 
 function App () {
@@ -12,10 +12,13 @@ function App () {
   const [isSearched, setIsSearched] = useState(false)
 
   const handleResultsAdd = (result: string) => {
-    setResults(oldState => [...oldState, result])
+    setResults((oldState) => [...oldState, result])
   }
 
-  const handleQuerySearch = async (values: QueryFormValues, markCompletion: () => void) => {
+  const handleQuerySearch = async (
+    values: QueryFormValues,
+    markCompletion: () => void
+  ) => {
     const wf = new WordFinder(values)
     for await (const word of wf.SearchGenerator()) {
       setIsSubmitting(false)
@@ -33,9 +36,19 @@ function App () {
 
   return (
     <Container className={style.container}>
-      <QueryForm handleQuerySearch={handleQuerySearch} initialMinCount={3} initialMaxCount={7}
-                 clearResults={handleResultsClear} setSubmitting={setIsSubmitting}/>
-      <Results results={results} isSubmitting={isSubmitting} isSearched={isSearched}/>
+      <Header content='WordConnect Helper' size={'huge'} />
+      <QueryForm
+        handleQuerySearch={handleQuerySearch}
+        initialMinCount={3}
+        initialMaxCount={7}
+        clearResults={handleResultsClear}
+        setSubmitting={setIsSubmitting}
+      />
+      <Results
+        results={results}
+        isSubmitting={isSubmitting}
+        isSearched={isSearched}
+      />
     </Container>
   )
 }

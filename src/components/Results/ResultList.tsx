@@ -11,9 +11,11 @@ const ResultList = ({ results }: Props) => {
     </List.Item>
   ))
 
-  return <TransitionGroup as={List} duration={600} animation={'fade left'} divided size='huge'>
-    {resultElements}
-  </TransitionGroup>
+  return (
+    <TransitionGroup as={List} duration={600} animation={'fade left'} divided size='huge'>
+      {resultElements}
+    </TransitionGroup>
+  )
 }
 
 export default ResultList
